@@ -23,6 +23,13 @@ equalityLabel <- function(id) switch(id,
                                      transgender="Transgender",
                                      "Overview")
 
+## New function
+Label <- function(id) switch(id,
+                                     recibidos="Recibidos",
+                                     emitidos="Emitidos",
+                                     otros="Otros",
+                                     "Recibidos")
+
 policyLabel <- function(id) switch(id,
                                    summ="Summary",
                                    busEnt="Business, Enterprise and Tourism",

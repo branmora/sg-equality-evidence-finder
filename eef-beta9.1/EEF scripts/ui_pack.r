@@ -137,8 +137,8 @@ eefGrid <- function(id) {
                  tagList(
                    tags$button(equalityLabel(e),class="eef-mobile-grid main",style="color:white",#equalityLabel is a function created in helper_funcs.r that converts characteristic IDs into the corresponding label
                                tags$a(class="e3-white",style="margin-left:1ch"),
-                               tags$img(src="icons/plus.svg",class="eef-section-header-expand",title="Click to show section"),
-                               shinyjs::hidden(tags$img(src="icons/minus.svg",class="eef-section-header-collapse",title="Click to hide section"))
+                               tags$img(src="icons/plus.svg",class="eef-section-header-expand",title="Click para mostrar seccion"),
+                               shinyjs::hidden(tags$img(src="icons/minus.svg",class="eef-section-header-collapse",title="Click para ocultar seccion"))
                    ),
                    shinyjs::hidden(
                      div(
@@ -238,8 +238,8 @@ eefSection <- function(id,title,class="",colour="eef-mid-blue",tabs=NULL,content
       id = ns("header"),
       `data-section`=title,
       title,
-      tags$img(src="icons/plus.svg",class="eef-section-header-expand",title="Click to show section"),
-      shinyjs::hidden(tags$img(src="icons/minus.svg",class="eef-section-header-collapse",title="Click to hide section")),
+      tags$img(src="icons/plus.svg",class="eef-section-header-expand",title="Click para mostrar seccion"),
+      shinyjs::hidden(tags$img(src="icons/minus.svg",class="eef-section-header-collapse",title="Click para ocultar seccion")),
       class=paste("eef-section-header active",colour), 
       tags$a(class="e3-white",style="margin-left:1ch")
     ),
@@ -288,6 +288,16 @@ equalityButtons9 <- function(id,title="",active=rep(TRUE,9),selected="Overview",
                   equalityID=c("overview","age","disability","ethnicity","gender","religion","sexualOrientation","socioEconomicStatus","transgender"),
                  class=paste("eef-equality-buttons9 eef-equality-buttons-dark",buttonClass[c(1,2,3,4,5,6,7,9,8)]),
                  active=active[c(1,2,3,4,5,6,7,9,8)])
+
+## New function
+Buttons3 <- function(id,title="",active=rep(TRUE,3),selected="Recibidos",buttonClass=rep("",3))
+  equalityButtons(id=id,
+                  title=title,
+                  selected=selected,
+                  equalityID=c("recibidos","emitidos","otros"),
+                  class=paste("eef-equality-buttons9 eef-equality-buttons-dark",buttonClass[c(1,2,3)]),
+                  active=active[c(1,2,3)])
+
 
 #Equality buttons (8 button version)
 # equalityButtons8 <- function(id,title="",active=rep(TRUE,8),selected="Overview") {
