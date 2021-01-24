@@ -144,7 +144,7 @@ server <- function(input,output,session) {
   #Table test
   
   output$mytable = DT::renderDataTable({
-    table_recibidos
+    datatable(table_recibidos, escape = FALSE)
   })
   
   #count number of connections to the server (i.e. number of users visiting site) and store in a google sheet - This is done in the server and doesn't involve personal data so should be compliant with all privacy regs
