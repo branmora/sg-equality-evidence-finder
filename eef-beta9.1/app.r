@@ -14,13 +14,18 @@ library(googleVis)
 library(rmarkdown)
 library(knitr)
 library(shinydashboard)
+library(DT)
 onScots <- !require(RColorBrewer)
 library(googlesheets)
 library(purrr)
 onScots <- !require(SPARQL) #package that doesn't work on Scots. onScots is a flag used to switch off functionality incompatible with Scots
 library(shinycssloaders)
-
+library(data.table)
 options(spinner.color="#0080db",spinner.type=1)
+
+
+# download data.table
+table_recibidos <-fread('https://raw.githubusercontent.com/branmora/sg-equality-evidence-finder/master/files/datatest.csv')
 
 #load helper scripts
 source("EEF scripts/dygraph-extra-shiny.R",local=TRUE)
@@ -73,7 +78,7 @@ ui <- fluidPage(
              class="eef-section eef eef-main eef-summ",
              tabs = tabBox(
                width = 12,
-               tabPanel("Documentos Recibidos", "first table"),
+               tabPanel("Documentos Recibidos", DT::dataTableOutput("mytable")),
                tabPanel("Documentos Emitidos", "second table"),
                tabPanel("Otros Documentos", "third table")
              )),
@@ -134,6 +139,13 @@ ui <- fluidPage(
 #shiny server
 graphOptions[["incPov-11"]]$updateNPF <- TRUE 
 server <- function(input,output,session) {
+  
+  
+  #Table test
+  
+  output$mytable = DT::renderDataTable({
+    table_recibidos
+  })
   
   #count number of connections to the server (i.e. number of users visiting site) and store in a google sheet - This is done in the server and doesn't involve personal data so should be compliant with all privacy regs
   

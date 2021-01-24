@@ -1,3 +1,3 @@
 ﻿Documento,Institucion,Asunto,Recibido,Descarga
-Oficio 54,GERESA,asunto1,12/12/20,linkparadescargar
-Oficio 55,GORE,asunto2,18/12/20,linkparadescargar
+Oficio 54,GERESA,asunto1,12/12/20,https://raw.githubusercontent.com/branmora/sg-equality-evidence-finder/master/files/datatest.csv
+Oficio 55,GORE,asunto2,18/12/20,https://raw.githubusercontent.com/branmora/sg-equality-evidence-finder/master/files/datatest.csv
