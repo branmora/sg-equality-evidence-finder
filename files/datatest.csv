@@ -1,3 +1,3 @@
-﻿Documento,Institucion,Asunto,Recibido,Descarga
-Oficio 54,GERESA,asunto1,12/12/20,http://rstudio.com
-Oficio 55,GORE,asunto2,18/12/20,https://github.com/branmora/sg-equality-evidence-finder/raw/master/files/doc1.pdf
+﻿Documento,Institucion,Asunto,Fecha,Descarga
+Carta 99-2020-154-GS2,Gobierno Regional Cusco,"Los asuntos son generalmente mas largos y podran ocupar mas espacio de lo normal, tal como este asunto que esta ocupando mucho mas espacio. Posiblemente incluso mas",12/12/20,http://rstudio.com
+Oficio 55,Presidencia del Consejo de Ministros,asunto2,18/12/20,https://github.com/branmora/sg-equality-evidence-finder/raw/master/files/doc1.pdf

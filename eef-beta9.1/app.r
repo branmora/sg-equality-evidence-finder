@@ -142,9 +142,12 @@ server <- function(input,output,session) {
   
   
   #Table test
+    
+  table_recibidos$Descarga <- paste0("<a href='",table_recibidos$Descarga,">RStudio</a>' target='_blank'>","Descarga","</a>")
   
   output$mytable = DT::renderDataTable({
-    datatable(table_recibidos, escape = FALSE)
+    datatable(table_recibidos, escape = FALSE,filter = 'top',
+              options = list(language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json')))
   })
   
   #count number of connections to the server (i.e. number of users visiting site) and store in a google sheet - This is done in the server and doesn't involve personal data so should be compliant with all privacy regs
